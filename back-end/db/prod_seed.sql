@@ -1,10 +1,10 @@
 
 INSERT INTO pins (name, description, price, is_featured, image) VALUES
-('GiR Pin', 'GiR from invader zim hugging is favorite toy', 10, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Zim Pin', 'Everyones favorite space invader... We dont talk about marvin', 8, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('P-Valley Pin', 'ask for uncle cliiford at the door', 15, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Trippy Rick Pin', 'whats better then a rick with his head in the clouds', 12, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Trippy Morty Pin', 'SEE RICK for the question', 12, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
+('GiR Pin', 'GiR from invader zim hugging is favorite toy', 10, true, '/gir.jpg'),
+('Zim Pin', 'Everyones favorite space invader... We dont talk about marvin', 8, true, '/zim.jpg'),
+('P-Valley Pin', 'ask for uncle cliiford at the door', 15, true, '/pValley.jpg'),
+('Trippy Rick Pin', 'whats better then a rick with his head in the clouds', 12, true, '/rick.jpg'),
+('Trippy Morty Pin', 'SEE RICK for the question', 12, true, '/morty.jpg');
 
 INSERT INTO reviews (pin_id, reviewer, title, content, rating) VALUES
 ('1', 'Sam', 'Cutest Thing EVER!', 'love the design its sooo adorble', 5),

@@ -2,6 +2,8 @@
 const cors = require("cors");
 const express = require("express");
 
+const pinController = require("./controllers/pinController.js")
+
 // CONFIGURATION
 const app = express();
 
@@ -14,23 +16,13 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 
-/////////////////////////////////////
-// REMOVE AFTER SUCCESSFUL DEPLOYMENT
-/////////////////////////////////////
-const db = require("./db/dbConfig.js");
+app.use("/pins", pinController);
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
-});
+// 404 Page
 
-/////////////////////////////////////
-// REMOVE AFTER SUCCESSFUL DEPLOYMENT
-/////////////////////////////////////
+app.get("*", (req,res)=>{
+  res.status(404).send("Page Not Found")
+})
 
 // EXPORT
 module.exports = app;

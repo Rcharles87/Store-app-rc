@@ -1,3 +1,4 @@
+DROP TABLE if EXISTS pins;
 
 CREATE TABLE pins(
     id SERIAL PRIMARY KEY, 

@@ -2,7 +2,7 @@
 
 INSERT INTO pins (name, description, price, is_featured, image) VALUES
 ('GiR Pin', 'GiR from invader zim hugging is favorite toy', 10, true, '/gir.jpg'),
-('Zim Pin', 'Everyones favorite space invader... We dont talk about marvin', 8, true, '/zim.jpg'),
+('Zim Pin', 'Everyones favorite space invader... We dont talk about marvin', 8, true, '/zim.jpeg'),
 ('P-Valley Pin', 'ask for uncle cliiford at the door', 15, true, '/pValley.jpg'),
 ('Trippy Rick Pin', 'whats better then a rick with his head in the clouds', 12, true, '/rick.jpg'),
 ('Trippy Morty Pin', 'SEE RICK for the question', 12, true, '/morty.jpg');

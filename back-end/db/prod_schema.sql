@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS pins_dev;
-CREATE DATABASE pins_dev;
-
-\c pins_dev;
 
 
 CREATE TABLE pins(

@@ -1,4 +1,3 @@
-\c pins_dev;
 
 INSERT INTO pins (name, description, price, is_featured, image) VALUES
 ('GiR Pin', 'GiR from invader zim hugging is favorite toy', 10, true, 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),

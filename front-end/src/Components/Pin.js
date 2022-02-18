@@ -1,5 +1,6 @@
-const API = process.env.REACT_APP_API_URL;
 import {currencyFormatter} from "../utils"
+
+const API = process.env.REACT_APP_API_URL;
 
 function Pin({ pin }) {
   return (
@@ -7,7 +8,7 @@ function Pin({ pin }) {
       <img src={`${API}/${pin.image}`} alt="pin" />
       <h3>{pin.name}</h3>
       <h4>{pin.description}</h4>
-      <h5>{pin.price}</h5>
+      <h5>{currencyFormatter.format(pin.price)}</h5>
     </div>
   );
 }

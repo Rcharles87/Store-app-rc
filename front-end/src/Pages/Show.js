@@ -2,7 +2,9 @@ import PinDetails from "../Components/PinDetails.js";
 
 function Show() {
   return (
-    <div>Show</div>
+    <div>
+      <PinDetails />
+    </div>
   )
 }
 

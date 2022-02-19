@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Announcement from "./Components/Announcement";
 import NavBar from "./Components/NavBar";
 
 import Edit from "./Pages/Edit";
@@ -11,6 +12,7 @@ import Show from "./Pages/Show";
 function App() {
   return (
     <div className="main">
+      <Announcement/>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}/>

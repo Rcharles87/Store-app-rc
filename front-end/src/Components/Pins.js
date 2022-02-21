@@ -1,10 +1,22 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 
 import Pin from "./Pin"
-
 const API = process.env.REACT_APP_API_URL;
+
+
+
+const Container = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
+
+
 
 function Pins() {
 
@@ -21,17 +33,16 @@ function Pins() {
 
 
   return (
-    <div>
-      <article>
+    <Container>
         {pins.map((pin)=>{
           return(
-            <Link to={`/pins/${pin.id}`}>
+            <Link key={pin.id} to={`/pins/${pin.id}`}>
               <Pin pin={pin}/>
             </Link>
           )
         })}
-      </article>
-    </div>
+
+    </Container>
   )
 }
 

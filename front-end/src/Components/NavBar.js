@@ -14,14 +14,16 @@ import {
   Right,
   MenuItem,
 } from "../Styles/navbar-style.js";
+import { useState } from "react";
 
 
-function NavBar({cartNumber}) {
+function NavBar({cart}) {
+ 
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          {/* <Language>EN</Language> */}
           <SearchContainer>
             <Input placeholder="Search"/>
             <SearchIcon style={{ color: "grey", fontSize: 16 }} />
@@ -44,7 +46,7 @@ function NavBar({cartNumber}) {
           </SLink> */}
           <MenuItem>
           <SLink to="/cart">
-            <Badge badgeContent={cartNumber} color="primary">
+            <Badge badgeContent={cart.map(item => item.quantity).reduce((a,b) => a + b,0)} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </SLink>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import {mobile} from "../responsive"
 
@@ -89,7 +90,15 @@ margin-bottom: 20px;
 
 export const ProductAmount = styled.div`
 font-size: 24px;
-margin: 5px;
+margin: 5px 5px;
+width: 30px;
+height: 30px;
+border-radius:10px;
+border: 1px solid teal;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0px 5px;
 ${mobile({ margin: "5px 15px" })}
 `
 
@@ -141,4 +150,9 @@ padding: 10px;
 background-color: black;
 color: white;
 font-weight: 600;
+`
+
+export const SLink = styled(Link)`
+text-decoration: none;
+color: black;
 `

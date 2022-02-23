@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { currencyFormatter } from "../utils";
 import AddIcon from "@mui/icons-material/Add";
+import { Backdrop } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import RemoveIcon from "@mui/icons-material/Remove";
 import {
   Container,
@@ -28,22 +30,43 @@ import {
   SummaryItemText,
   SummaryItemPrice,
   Button,
+  SLink
 } from "../Styles/cart-style";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Cart = ({cart, subtotal}) => {
+const Cart = ({cart, subtotal, setCart, setTotal}) => {
     let shipping = 5
     let discount = -5
-
     let total = subtotal + shipping + discount
-console.log((subtotal) + shipping + discount)
+
+    let navigate = useNavigate()
+
+    const [open, setOpen] = useState(false)
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+
+const handleCheckoutButton = () =>{
+  setOpen(!open)
+  setCart([])
+  setTotal(0)
+  setTimeout(()=> navigate("/"), 2000)
+}
+
+
+    
+
+console.log(cart)
   return (
     <Container>
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
+            <SLink to={`/pins`}>
           <TopButton>CONTINUE SHOPPING</TopButton>
+            </SLink>
           <TopTexts>
             <TopText>Shopping Bag({cart.length})</TopText>
             {/* <TopText>Your Wishlist(0)</TopText> */}
@@ -67,12 +90,12 @@ console.log((subtotal) + shipping + discount)
                     </ProductDetail>
                     <PriceDetail>
                       <ProductAmountContainer>
-                        <AddIcon />
-                        <ProductAmount>2</ProductAmount>
-                        <RemoveIcon />
+                        {/* <AddIcon /> */}
+                        <ProductAmount>{item.quantity}</ProductAmount>
+                        {/* <RemoveIcon /> */}
                       </ProductAmountContainer>
                       <ProductPrice>
-                        {currencyFormatter.format(item.price)}
+                        {currencyFormatter.format(Number(item.price)* item.quantity )}
                       </ProductPrice>
                     </PriceDetail>
                   </Product>
@@ -85,7 +108,7 @@ console.log((subtotal) + shipping + discount)
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemText>{currencyFormatter.format(subtotal)}</SummaryItemText>
+              <SummaryItemText>{currencyFormatter.format(subtotal )}</SummaryItemText>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -99,7 +122,18 @@ console.log((subtotal) + shipping + discount)
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>{currencyFormatter.format(total)}</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            <Button onClick={handleCheckoutButton}>CHECKOUT NOW</Button>
+            <Backdrop
+              sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+              open={open}
+              onClick={handleClose}
+            >
+              Thank you for your Purchase
+              <br />
+              your total was: {currencyFormatter.format(total)}
+              <br />
+              total number of items: {cart.map(item => item.quantity).reduce((a,b) => a + b,0)}
+            </Backdrop>
           </Summary>
         </Bottom>
       </Wrapper>

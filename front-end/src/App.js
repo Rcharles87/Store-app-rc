@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Announcement from "./Components/Announcement";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import Edit from "./Pages/Edit";
 import FourOFour from "./Pages/FourOFour";
@@ -19,27 +19,37 @@ function App() {
   const [cart, setCart] = useState([])
   const [total, setTotal ] = useState(0)
 
-  const handleAddToCart = (pin) =>{
-    setCart([...cart,  pin ])
-    handleSubtotal([...cart,  pin ])
+  
+  // useEffect(()=>{  
+  //   if(cart.length > 0){
+  //     localStorage.setItem('cart', JSON.stringify(cart));
+  //   }
+  // },[cart])
+  // console.log(JSON.parse(localStorage.getItem("cart")))
+
+  const handleAddToCart = (pin, quantity) =>{
+    let newObj = {...pin} 
+     newObj.quantity = quantity
+    setCart([...cart, newObj])
+    handleSubtotal([...cart,  newObj ])
   }
 
   const handleSubtotal = (cart)=>{
-    let subtotal = cart.map(item => item.price).reduce((a,b) => Number(a)+ Number(b),0)
-    setTotal(subtotal)
+    let subtotal = cart.map(item => Number(item.price) * item.quantity).reduce((a,b) => a + b,0)
+    setTotal (subtotal)
   };
 
   return (
     <div className="main">
       <Announcement/>
-      <NavBar cartNumber={cart.length}/>
+      <NavBar cart={cart}/>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/pins" element={<Index addToCart={handleAddToCart} />} />
         <Route path="/pins/new" element={<New />} />
         <Route exact path="/pins/:id" element={<Show addToCart={handleAddToCart}/>} />
         <Route path="/pins/:id/edit" element={<Edit />} />
-        <Route path="/cart" element={<Cart cart={cart} subtotal={total}/>} />
+        <Route path="/cart" element={<Cart setCart={setCart} cart={cart} setTotal={setTotal} subtotal={total}/>} />
         <Route path="*" element={<FourOFour />} />
       </Routes>
       <Footer/>

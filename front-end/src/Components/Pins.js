@@ -18,7 +18,7 @@ const Container = styled.div`
 
 
 
-function Pins() {
+function Pins({viewFeatPin}) {
 
   const [pins, setPins] = useState([]);
 
@@ -31,14 +31,21 @@ function Pins() {
     })
   }, [])
 
+  const allPins =  pins.map((pin)=>{
+    return(
+        <Pin key={pin.id} pin={pin}/>
+    )
+  })
+
+  const featPins = pins.filter(pin => pin.is_featured).map((pin)=>{
+    return(
+      <Pin key={pin.id} pin={pin}/>
+      )
+  })
 
   return (
     <Container>
-        {pins.map((pin)=>{
-          return(
-              <Pin key={pin.id} pin={pin}/>
-          )
-        })}
+      {viewFeatPin? featPins : allPins}
 
     </Container>
   )

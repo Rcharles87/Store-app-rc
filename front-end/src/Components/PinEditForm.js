@@ -42,7 +42,7 @@ const  PinEditForm = () => {
   };
 
   const handleCheckboxChange = () => {
-    setPin({ ...pin, is_favorite: !pin.is_favorite });
+    setPin({ ...pin, is_featured: !pin.is_featured });
   };
 
   const handleSumbit = (event) => {

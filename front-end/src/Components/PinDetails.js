@@ -67,14 +67,12 @@ function PinDetails({ addToCart }) {
 
   return (
     <Container>
-      <SLink to={`/pins`}>
-        <NavContainer>
+        {/* <NavContainer>
           <NavIcon>
-            <ArrowBackIcon />
+          <ArrowBackIcon />
           </NavIcon>
           BACK
-        </NavContainer>
-      </SLink>
+        </NavContainer> */}
 
       <Wrapper>
         <ImgContainer>
@@ -91,9 +89,12 @@ function PinDetails({ addToCart }) {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button onClick={() => addToCart(pin)}>ADD TO CART</Button>
+            <Button onClick={() => addToCart(pin, quantity)}>ADD TO CART</Button>
           </AddContainer>
           <AdminContainer>
+        <SLink to={`/pins`}>
+            <Button>BACK</Button>
+      </SLink>
             <Slink to={`/pins/${pin.id}/edit`}>
               <Button>EDIT</Button>
             </Slink>

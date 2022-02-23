@@ -1,9 +1,9 @@
 import PinDetails from "../Components/PinDetails.js";
 
-function Show() {
+function Show({addToCart}) {
   return (
     <div>
-      <PinDetails />
+      <PinDetails addToCart={addToCart}/>
     </div>
   )
 }

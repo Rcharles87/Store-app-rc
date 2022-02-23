@@ -7,6 +7,7 @@ function Home() {
     <div>
       <Slider/>
       <Pins/>
+      <NewLetter/>
     </div>
   )
 }

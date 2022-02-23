@@ -12,6 +12,7 @@ import {
   Title,
   Desc,
   Button,
+  SLink
 } from "../Styles/slider-style.js";
 
 function Slider() {
@@ -31,10 +32,10 @@ function Slider() {
         <ArrowBackIosNewOutlinedIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        <Slide bg="2F4858">
+        <Slide bg="F6AE2D90">
           <ImgContainer>
             <Image
-              src="https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
+              src="https://media.istockphoto.com/vectors/mega-sale-banner-template-with-polygonal-3d-shapes-and-text-for-vector-id1182928663?k=20&m=1182928663&s=612x612&w=0&h=gpsceqle8gnkAJ8J_xi18D9eaC0_JQhW-xcDjjruRgc="
               alt="nothing"
             />
           </ImgContainer>
@@ -44,10 +45,12 @@ function Slider() {
               CELEBRATE AND BUY SOMETHING NICE FOR YOURSELF 50% OFF USE CODE:
               EightIsGreat
             </Desc>
+            <SLink to="/pins">
             <Button>SHOP NOW!</Button>
+            </SLink>
           </InfoContainer>
         </Slide>
-        <Slide bg="F6AE2D">
+        <Slide bg="2F485849">
           <ImgContainer>
             <Image
               src="https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
@@ -60,10 +63,12 @@ function Slider() {
               CELEBRATE AND BUY SOMETHING NICE FOR YOURSELF 50% OFF USE CODE:
               EightIsGreat
             </Desc>
+            <SLink to="/pins">
             <Button>SHOP NOW!</Button>
+            </SLink>
           </InfoContainer>
         </Slide>
-        <Slide bg="F26419">
+        <Slide bg="F2641990">
           <ImgContainer>
             <Image
               src="https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
@@ -76,7 +81,9 @@ function Slider() {
               CELEBRATE AND BUY SOMETHING NICE FOR YOURSELF 50% OFF USE CODE:
               EightIsGreat
             </Desc>
+            <SLink to="/pins">
             <Button>SHOP NOW!</Button>
+            </SLink>
           </InfoContainer>
         </Slide>
       </Wrapper>

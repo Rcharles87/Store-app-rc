@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 
 
@@ -6,10 +8,11 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #f26419;
   position: relative;
   overflow: hidden;
+  ${mobile({display:"none"})}
 `;
+
 export const Arrow = styled.div`
   width: 50px;
   height: 50px;
@@ -33,7 +36,7 @@ export const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${(props)=> props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 export const Slide = styled.div`
@@ -51,6 +54,7 @@ export const ImgContainer = styled.div`
 
 export const Image = styled.img`
   height: 80%;
+  width: 100%;
 `;
 
 export const InfoContainer = styled.div`
@@ -73,3 +77,8 @@ export const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
 `;
+
+export const SLink = styled(Link)`
+text-decoration: none;
+color: black;
+`

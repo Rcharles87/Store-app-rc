@@ -36,9 +36,7 @@ function Pins() {
     <Container>
         {pins.map((pin)=>{
           return(
-            <Link key={pin.id} to={`/pins/${pin.id}`}>
-              <Pin pin={pin}/>
-            </Link>
+              <Pin key={pin.id} pin={pin}/>
           )
         })}
 

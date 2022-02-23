@@ -15,38 +15,41 @@ import {
   MenuItem,
 } from "../Styles/navbar-style.js";
 
-const API = process.env.REACT_APP_API_URL;
 
-function NavBar() {
+function NavBar({cartNumber}) {
   return (
     <Container>
       <Wrapper>
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input></Input>
+            <Input placeholder="Search"/>
             <SearchIcon style={{ color: "grey", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
           <Logo>
-            {" "}
-            <SLink to="/">Rae's Pin Shop</SLink>
+            <SLink to="/">Pin Shop</SLink>
           </Logo>
         </Center>
         <Right>
+        <SLink to="/pins/new">
+          <MenuItem>NEW PIN</MenuItem>
+          </SLink>
+          {/* <SLink to="/register">
           <MenuItem>Register</MenuItem>
+          </SLink>
+          <SLink to="/login">
           <MenuItem>Sign In</MenuItem>
+          </SLink> */}
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
+          <SLink to="/cart">
+            <Badge badgeContent={cartNumber} color="primary">
               <ShoppingCartOutlined />
             </Badge>
+          </SLink>
           </MenuItem>
         </Right>
-        {/* 
-      <button>
-        <Link to="/pins/new">New Pin</Link>
-      </button> */}
       </Wrapper>
     </Container>
   );

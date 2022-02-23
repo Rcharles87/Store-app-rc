@@ -3,7 +3,9 @@ import PinEditForm from "../Components/PinEditForm.js";
 
 function Edit() {
   return (
-    <div>Edit</div>
+    <div>
+      <PinEditForm/>
+    </div>
   )
 }
 

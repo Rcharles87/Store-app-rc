@@ -1,3 +1,8 @@
+# Deployed Links
+- `https://unruffled-bose-2b91b5.netlify.app`
+- `https://rc-store-app-be.herokuapp.com/`
+
+
 # PERN Final Project Template
 
 - select `use this template`

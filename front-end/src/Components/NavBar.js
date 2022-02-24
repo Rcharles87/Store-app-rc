@@ -24,10 +24,13 @@ function NavBar({cart}) {
       <Wrapper>
         <Left>
           {/* <Language>EN</Language> */}
-          <SearchContainer>
+          {/* <SearchContainer>
             <Input placeholder="Search"/>
             <SearchIcon style={{ color: "grey", fontSize: 16 }} />
-          </SearchContainer>
+          </SearchContainer> */}
+           <SLink to="/pins">
+          <MenuItem>VIEW ALL PINS</MenuItem>
+          </SLink>
         </Left>
         <Center>
           <Logo>

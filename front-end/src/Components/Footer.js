@@ -16,10 +16,8 @@ import {
   ListItem,
   Right,
   ContactItem,
+  SLink,
 } from "../Styles/footer-style.js";
-
-
-
 
 const Footer = () => {
   return (
@@ -33,21 +31,33 @@ const Footer = () => {
         </Desc>
         <SocialContainer>
           <SocialIcon color="999999">
-            <GitHubIcon />
+            <SLink href="https://github.com/Rcharles87">
+              <GitHubIcon />
+            </SLink>
           </SocialIcon>
           <SocialIcon color="0077B5">
-            <LinkedInIcon />
+            <SLink href="https://www.linkedin.com/in/rae-charles-85956a113/">
+              <LinkedInIcon />
+            </SLink>
           </SocialIcon>
         </SocialContainer>
       </Left>
       <Center>
         <Title>Useful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Pins</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>WishList</ListItem>
+          <ListItem>
+            <SLink href="/">Home</SLink>
+          </ListItem>
+
+          <ListItem>
+            <SLink href="/cart">Cart</SLink>
+          </ListItem>
+
+          <ListItem>
+            <SLink href="/pins">Pins</SLink>
+          </ListItem>
+          {/* <ListItem>My Account</ListItem> */}
+          {/* <ListItem>WishList</ListItem> */}
         </List>
       </Center>
       <Right>

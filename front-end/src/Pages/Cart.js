@@ -52,7 +52,7 @@ const handleCheckoutButton = () =>{
   setOpen(!open)
   setCart([])
   setTotal(0)
-  setTimeout(()=> navigate("/"), 2000)
+  setTimeout(()=> navigate("/"), 2500)
 }
 
 
@@ -129,10 +129,8 @@ console.log(cart)
               onClick={handleClose}
             >
               Thank you for your Purchase
-              <br />
-              your total was: {currencyFormatter.format(total)}
-              <br />
-              total number of items: {cart.map(item => item.quantity).reduce((a,b) => a + b,0)}
+              {/* your total was: {currencyFormatter.format(subtotal + shipping + discount)} */}
+              {/* total number of items: {cart.map(item => item.quantity).reduce((a,b) => a + b,0)} */}
             </Backdrop>
           </Summary>
         </Bottom>

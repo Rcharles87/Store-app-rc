@@ -71,3 +71,8 @@ export const ContactItem = styled.div`
     display: flex;
     align-items: center;
 `
+
+export const SLink = styled.a`
+text-decoration: none;
+color: inherit;
+`
